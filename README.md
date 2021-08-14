@@ -1,12 +1,20 @@
 # mik-shop
 
-Ich streame dieses Projekt mit twitch -> https://twitch.tv/lootziffer1337
+Hallo, vielen Dank für euer Interesse!
+
+#Ich streame dieses Projekt mit twitch -> https://twitch.tv/lootziffer1337
 
 
 
 Tutorial nach Vitalij Mik
+Sein Youtube Kanal -> https://www.youtube.com/channel/UCKWA2xJ85P3yCxThgtVzJ5Q
 
-Hallo, vielen Dank für euer Interesse!
+Vielen Dank diesem Ehrenmann es ist ein großes Vergnügen seinen Informativen und verständlichen Anleitungen zu folgen,
+zudem danke ich dir sehr herzlich für den schnellen und hilfreichen Support in seinem Discord welcher in der Tutorial Reihe verlinkt ist.
+
+
+
+
 
 
 der Letzte Stand des Tutorials ist bei : https://youtu.be/by3rO8Wm6zQ?list=PLz858EFEcxiElOUr7b3Pql1CMHuVRYkTh&t=973
@@ -26,7 +34,8 @@ GITHUB SEIT DEM 13.08.21 ein neues Login Management verpflichtend gemacht hat.
 @github bitte klärt doch auch die neuen User darüber auf,
 sowas bringt oft unerwartete nachteile mit sich! 
 
-Beim Download bitte beachten, dass im Verzeichnis /shop/assets 
+Beim Download bzw bei eventueller Nutzung des Codes ist bitte beachten, 
+dass im Verzeichnis /shop/assets 
 ein verzeichnis /bootstrap angelegt werden muss in welches 
 eine frisch geladene Version von Bootstrap entpackt werden muss :)
 
