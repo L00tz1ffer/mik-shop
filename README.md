@@ -2,7 +2,9 @@
 
 Hallo, vielen Dank für euer Interesse!
 
+--------------------------------------------------------------------------
 Ich streame dieses Projekt mit twitch -> https://twitch.tv/lootziffer1337
+--------------------------------------------------------------------------
 
 
 
@@ -21,7 +23,9 @@ der Letzte Stand des Tutorials ist bei : https://youtu.be/by3rO8Wm6zQ?list=PLz85
 
 
 
+--------------------------------------------------------------------------
 Ich streame dieses Projekt mit twitch -> https://twitch.tv/lootziffer1337
+--------------------------------------------------------------------------
 
 
 
@@ -39,10 +43,17 @@ dass im Verzeichnis /shop/assets
 ein verzeichnis /bootstrap angelegt werden muss in welches 
 eine frisch geladene Version von Bootstrap entpackt werden muss :)
 
+
+Zur Ausführung dieses Projektes wird weiterhin ein Webserver benötigt, dieser muss MYSQL, PHP(7) + PDO & selbstverständlich HTML ausliefern können
+alle hier aufgezeigten Dateien sowie auch Bootstrap müssen in 
+-> den Webroot des Servers (/var/www/html)
+
 Bootstrap kann hier herungergeladen werden:
 https://getbootstrap.com/docs/4.0/getting-started/download/
 
 
 
 
+--------------------------------------------------------------------------
 Ich streame dieses Projekt mit twitch -> https://twitch.tv/lootziffer1337
+--------------------------------------------------------------------------
