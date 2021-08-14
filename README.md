@@ -1,14 +1,39 @@
 # mik-shop
 
-Tutorial of Vitalij Mik
+Ich streame dieses Projekt mit twitch -> https://twitch.tv/lootziffer1337
 
-Hallo, vielen Dank fürs Lesen und vielen Dank für eure Hilfe.
+
+
+Tutorial nach Vitalij Mik
+
+Hallo, vielen Dank für euer Interesse!
 
 
 der Letzte Stand des Tutorials ist bei : https://youtu.be/by3rO8Wm6zQ?list=PLz858EFEcxiElOUr7b3Pql1CMHuVRYkTh&t=973
 
 
 
-
 Ich streame dieses Projekt mit twitch -> https://twitch.tv/lootziffer1337
 
+
+
+
+
+
+Bitte bedenkt, dass es Probleme mit dem Repo gab und daher die Vergangenen Commits verloren sind,
+es wurde einfach ein Backup eingestellt, da ich nicht wusste, dass 
+GITHUB SEIT DEM 13.08.21 ein neues Login Management verpflichtend gemacht hat.
+@github bitte klärt doch auch die neuen User darüber auf,
+sowas bringt oft unerwartete nachteile mit sich! 
+
+Beim Download bitte beachten, dass im Verzeichnis /shop/assets 
+ein verzeichnis /bootstrap angelegt werden muss in welches 
+eine frisch geladene Version von Bootstrap entpackt werden muss :)
+
+Bootstrap kann hier herungergeladen werden:
+https://getbootstrap.com/docs/4.0/getting-started/download/
+
+
+
+
+Ich streame dieses Projekt mit twitch -> https://twitch.tv/lootziffer1337
