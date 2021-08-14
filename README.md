@@ -2,12 +2,12 @@
 
 Hallo, vielen Dank für euer Interesse!
 
---------------------------------------------------------------------------
+
 Ich streame dieses Projekt mit twitch -> https://twitch.tv/lootziffer1337
 --------------------------------------------------------------------------
 
 
--------------------------
+
 Tutorial nach Vitalij Mik
 -------------------------
 Sein Youtube Kanal -> https://www.youtube.com/channel/UCKWA2xJ85P3yCxThgtVzJ5Q
@@ -27,7 +27,7 @@ der Letzte Stand des Tutorials ist bei : https://youtu.be/by3rO8Wm6zQ?list=PLz85
 
 
 
---------------------------------------
+
 Wichtiger Hinweis zu änderungen an Git
 --------------------------------------
 
@@ -43,7 +43,7 @@ sowas bringt oft unerwartete nachteile mit sich!
 
 
 
-----------------------------------------
+
 Wichger Hinweis zum Klonen des Projektes
 ----------------------------------------
 
