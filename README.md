@@ -2,7 +2,7 @@
 
 Hallo, vielen Dank für euer Interesse!
 
-#Ich streame dieses Projekt mit twitch -> https://twitch.tv/lootziffer1337
+Ich streame dieses Projekt mit twitch -> https://twitch.tv/lootziffer1337
 
 
 
