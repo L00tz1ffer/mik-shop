@@ -1,0 +1,20 @@
+#cartItems .cartItem{
+    border-bottom: 1px solid #DDD;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+#cartItems .cartItem .productPicture{
+    width: 80%;
+    height: auto;
+}
+
+#cartItems .price{
+    font-weight: bold;
+    color: red;
+}
+
+#cartItems .cartItemHeader{
+    border-bottom: 1px solid #DDD;
+}
+
