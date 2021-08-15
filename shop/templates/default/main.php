@@ -8,7 +8,7 @@
         <base href="<?=$baseUrl?>">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?=BOOTSTRAPDIR?>css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 	<link rel="stylesheet" href="assets/css/styles.css">
@@ -37,7 +37,7 @@
 	
 	
 	
-	<script src="assets/js/bootstrap.bundle.js"></script>
+	<script src="<?=BOOTSTRAPDIR?>js/bootstrap.bundle.js"></script>
 </body>
 
 </html>
