@@ -59,8 +59,3 @@ alle hier aufgezeigten Dateien sowie auch Bootstrap müssen in
 
 Bootstrap kann hier herungergeladen werden:
 https://getbootstrap.com/docs/4.0/getting-started/download/
-
-
-
-
-teajshjashflhsalkfj
