@@ -2,4 +2,5 @@
 /nbproject/
 
 # Der Ordner in dem Bootstrap liegt soll auch nicht Synchronisiert werden - verkürzt die Uploadzeiten und jeder kann sich Bootstrap runterladen wenn er möchte :)
-/shop/assets/bootstrap/
+/shop/assets/bootstrap/css
+/shop/assets/bootstrap/js
