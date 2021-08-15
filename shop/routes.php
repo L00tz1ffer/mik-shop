@@ -68,7 +68,7 @@ if(strpos($route,'/login') !== false ){
         if(0 === count($userData)){
             $errors[]="Benutzername existiert nicht";
         }
-                
+        var_dump($errors);      
     }
     $hasErrors = count($errors) > 0;
     
