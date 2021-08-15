@@ -20,7 +20,7 @@ zudem danke ich dir sehr herzlich für den schnellen und hilfreichen Support in 
 
 
 
-der Letzte Stand des Tutorials ist bei : https://youtu.be/by3rO8Wm6zQ?list=PLz858EFEcxiElOUr7b3Pql1CMHuVRYkTh&t=973
+der Letzte Stand des Tutorials ist bei : https://youtu.be/cXZG4yJhLsQ?list=PLz858EFEcxiElOUr7b3Pql1CMHuVRYkTh&t=1121
 
 
 
