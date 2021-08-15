@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-	<link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="stylesheet" href="<?=BOOTSTRAPDIR?>css/styles.css">
 
 		
 </head>
@@ -51,13 +51,13 @@
 </div>
 
 <div class="row">
-    <a href="#" class="btn btn-primary col-12">Zur Kasse gehen</a>
+    <a href="index.php/checkout" class="btn btn-primary col-12">Zur Kasse gehen</a>
 </div>
 
 </section>
 	
 	
 	
-	<script src="assets/js/bootstrap.bundle.js"></script>
+	<script src="<?=BOOTSTRAPDIR?>js/bootstrap.bundle.js"></script>
 </body>
 </html>
