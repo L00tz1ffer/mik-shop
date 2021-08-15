@@ -7,7 +7,7 @@
  */
     function addProductToCart(int $userID, int $productID){
         $sql = "INSERT INTO cart 
-                SET user_id = quantity=1 :userID,product_id = :productID
+                SET quantity=quantity=1, user_id = :userID,product_id = :productID
                 ON DUPLICATE KEY UPDATE quantity = quantity + 1";
 	$statement = getDB()->prepare($sql);
 

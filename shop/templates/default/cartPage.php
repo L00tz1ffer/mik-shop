@@ -38,7 +38,7 @@
 </div>
     
 <!-- Produkte auflisten -->     
-    <?php foreach ($cartItems as $cartitem):?>
+    <?php foreach ($cartItems as $cartItem):?>
         <div class="row cartItem">
             <?php include __DIR__.'/cartItem.php';?>
         </div>
