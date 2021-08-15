@@ -42,11 +42,11 @@
                         
                         <DIV class="form-group">
                             <label for="username">Username</label>
-                            <INPUT type="text" value="<?= $username?>" name="username" id="username" class="form-control">
+                            <INPUT type="text" value="<?=$username?>" name="username" id="username" class="form-control">
                         </DIV>
                         <DIV class="form-group">
                             <label for="password">Username</label>
-                            <INPUT type="password" value="<?= $password?>" name="password" id="password" class="form-control">
+                            <INPUT type="password" value="<?=$password?>" name="password" id="password" class="form-control">
                         </DIV>
                     </div>
                     <div class="card-footer">
