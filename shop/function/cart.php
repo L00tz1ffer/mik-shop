@@ -6,7 +6,9 @@
  * and open the template in the editor.
  */
     function addProductToCart(int $userID, int $productID){
-        $sql = 'INSERT INTO cart SET user_id = :userID,product_id = :productID';
+        $sql = "INSERT INTO cart 
+                SET user_id = quantity=1 :userID,product_id = :productID
+                ON DUPLICATE KEY UPDATE quantity = quantity + 1";
 	$statement = getDB()->prepare($sql);
 
 	$statement->execute([
@@ -41,7 +43,7 @@
         return $found;
     }
     function getCartSumForUserID(int $userID): int{
-        $sql = "SELECT SUM(price)
+        $sql = "SELECT SUM(price * quantity)
                 FROM cart 
                 JOIN products ON cart.product_id = products.id 
                 WHERE user_id = ".$userID;

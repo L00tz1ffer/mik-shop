@@ -46,7 +46,7 @@
 
 <div class="row">
     <DIV class="col-12 text-right">
-        Summe (<?= $countCartItems ?> Artikel): <SPAN class="price"><?= $cartSum ?> €</span>
+        Summe (<?= $countCartItems ?> Artikel): <SPAN class="price"><?= number_format($cartSum/100,2,","," ") ?> €</span>
     </DIV>
 </div>
 

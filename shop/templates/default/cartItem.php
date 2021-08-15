@@ -3,13 +3,12 @@
 </div>
 
 <div class="col-7">
-<div><?=$cartitem['title']?></div>    
-<div><?=$cartitem['description']?></div>  
-
+    <div><?=$cartitem['title']?></div>    
+    <div><?=$cartitem['description']?></div>  
 </div>
 
 <div class="col-2 text-right">
     <span class="price">
-        <div><?=$cartitem['price']?> €</div>  
+        <?= number_format($cartItem/100,2,","," ") ?> € 
     </span>
 </div>
