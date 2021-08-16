@@ -58,6 +58,12 @@ if(strpos($route,'/login') !== false ){
     $hasErrors=false;
     
     if($isPost){
+        
+        $username = filter_input(INPUT_POST,'username',FILTER_SANITIZE_SPECIAL_CHARS);
+        $password = filter_input(INPUT_POST,'password');
+        
+  
+        
         if (false === (bool)$username){
             $errors[]="Benutzername ist Leer!";
         }
@@ -65,10 +71,22 @@ if(strpos($route,'/login') !== false ){
             $errors[]="Passwort ist Leer!";         
         }
         $userData= getUserDataForUserName($username);
-        if(0 === count($userData)){
+        if((bool)$username && 0 === count($userData)){
             $errors[]="Benutzername existiert nicht!";
-        }     
+        }
+         
+        if ((bool)$password 
+           && $userData['password'] &&
+           false === password_verify($password, $userData['password'])     
+           ){
+            $errors[] = "Das Passwort stimmt nicht!";
+        }
+        if (0 === count($errors)){
+            $_SESSION['userID'] = (int)$userData['id'];
+        }
     }
+    
+    
     $hasErrors = count($errors) > 0;
     
     require __DIR__.'/templates/default/login.php';
