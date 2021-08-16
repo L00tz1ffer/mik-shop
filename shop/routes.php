@@ -52,8 +52,8 @@ if(strpos($route, '/cart') !== false){
 if(strpos($route,'/login') !== false ){
     
     $isPost = strtoupper($_SERVER['REQUEST_METHOD']) === 'POST';
-    $username = "test";
-    $password = "test";
+    $username = "";
+    $password = "";
     $errors=[];
     $hasErrors=false;
     
