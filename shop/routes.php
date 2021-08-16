@@ -59,16 +59,15 @@ if(strpos($route,'/login') !== false ){
     
     if($isPost){
         if (false === (bool)$username){
-            $errors[]="Benutzername ist leer";
+            $errors[]="Benutzername ist Leer!";
         }
         if (false === (bool)$password){
-            $errors[]="Passwort ist leer";         
+            $errors[]="Passwort ist Leer!";         
         }
         $userData= getUserDataForUserName($username);
         if(0 === count($userData)){
-            $errors[]="Benutzername existiert nicht";
-        }
-        var_dump($errors);      
+            $errors[]="Benutzername existiert nicht!";
+        }     
     }
     $hasErrors = count($errors) > 0;
     
