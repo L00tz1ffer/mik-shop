@@ -20,16 +20,6 @@ zudem danke ich dir sehr herzlich für den schnellen und hilfreichen Support in 
 
 
 
-
-
-
-der Letzte Stand des Tutorials ist bei : https://youtu.be/cXZG4yJhLsQ?list=PLz858EFEcxiElOUr7b3Pql1CMHuVRYkTh&t=1267
-
-
-
-
-
-
 Wichtiger Hinweis zu änderungen an Git
 --------------------------------------
 
@@ -43,15 +33,11 @@ sowas bringt oft unerwartete nachteile mit sich!
 
 
 
-
-
-
 Wichger Hinweis zum Klonen des Projektes
 ----------------------------------------
 
-Beim Download bzw bei eventueller Nutzung des Codes ist bitte beachten, 
-dass im Verzeichnis /shop/assets 
-ein verzeichnis /bootstrap angelegt werden muss in welches 
+Beim Download bzw bei eventueller Nutzung des Codes im eigeninteresse zu beachten, 
+dass ein Verzeichnis ../bootstrap bzw /var/www/html/bootstrap angelegt werden muss in welches 
 eine frisch geladene Version von Bootstrap entpackt werden muss :)
 
 
