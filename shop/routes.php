@@ -62,8 +62,7 @@ if(strpos($route,'/login') !== false ){
         $username = filter_input(INPUT_POST,'username',FILTER_SANITIZE_SPECIAL_CHARS);
         $password = filter_input(INPUT_POST,'password');
         
-  
-        
+
         if (false === (bool)$username){
             $errors[]="Benutzername ist Leer!";
         }
@@ -83,22 +82,41 @@ if(strpos($route,'/login') !== false ){
         }
         if (0 === count($errors)){
             $_SESSION['userID'] = (int)$userData['id'];
+            
+            moveCartProductsToAnotherUser($_COOKIE['userID'], (int)$userData['id']);
+            var_dump($userData);
+            setcookie('userID', $userID, strtotime('+30 days'),$baseUrl);
+
+            $redirectTarget = $baseUrl."index.php";
+            if(isset($_SESSION['redirectTarget'])){
+                $redirectTarget = $_SESSION['redirectTarget'];
+            }
+            header("Location: ".$redirectTarget);
+            exit;
         }
     }
-    
-    
     $hasErrors = count($errors) > 0;
-    
     require __DIR__.'/templates/default/login.php';
     exit();
 }
+
 if(strpos($route,'/checkout') !== false ){
     if(!isLoggedIn()){
+        $_SESSION['redirectTarget'] = $baseUrl."index.php/checkout";
         header("Location: ".$baseUrl."index.php/login");
-        var_dump($userID);
 	exit();
     }
-    
-    
     exit();
 }
+
+if (strpos($route,'/logout') !==falase ){
+    session_regenerate_id(true);
+    session_destroy();
+    header("Location: ".$_SESSION['redirectTarget']);
+    exit();
+}
+
+    $_SESSION['redirectTarget'] = $baseUrl.'index.php/'.$route;
+    $userID = getCurrentUserID();
+    setcookie('userID', $userID, strtotime('+30 days'),$baseUrl);
+

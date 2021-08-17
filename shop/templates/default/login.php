@@ -45,7 +45,7 @@
                             <INPUT type="text" value="<?=$username?>" name="username" id="username" class="form-control">
                         </DIV>
                         <DIV class="form-group">
-                            <label for="password">Username</label>
+                            <label for="password">Password</label>
                             <INPUT type="password" value="<?=$password?>" name="password" id="password" class="form-control">
                         </DIV>
                     </div>

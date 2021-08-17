@@ -7,8 +7,8 @@
  */
 
 function getCurrentUserID(){
- //   $userID = random_int(0,time()); 
-      $userID = 1;
+    $userID = random_int(0,time()); 
+    //  $userID = 1;
     if(isset($_COOKIE['userID'])){
             $userID = (int) $_COOKIE['userID'];
     }
@@ -17,7 +17,12 @@ function getCurrentUserID(){
             $userId = (int) $_SESSION['userID'];
     }
     return $userID;
+    
 }
+
+
+
+
 function getUserDataForUserName(string $username):array{
     $sql="SELECT id, password
           FROM users
