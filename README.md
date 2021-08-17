@@ -1,5 +1,8 @@
 # mik-shop
 
+Ich fange von vorne an
+----------------------
+
 Hallo, vielen Dank für euer Interesse!
 
 
@@ -61,5 +64,3 @@ https://getbootstrap.com/docs/4.0/getting-started/download/
 
 
 
-
-Letzter Stand: https://youtu.be/qOt-k7o7hS0?list=PLz858EFEcxiElOUr7b3Pql1CMHuVRYkTh&t=1063
