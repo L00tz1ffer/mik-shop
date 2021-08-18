@@ -8,3 +8,9 @@ and open the template in the editor.
     Author     : L00tz1ffer
 */
 
+.jumbotron-workaround{
+    background-color: hsl(0, 0%, 94%);
+    font-size: 320%;
+    margin: 2px;
+    margin-bottom: 25px;
+}
