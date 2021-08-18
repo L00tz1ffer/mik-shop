@@ -8,13 +8,16 @@
 ?>
 
             <div class="card">
-                <div class="card-header">
-                    titel
+                <div class="card-title">
+                    <?= $row['title']?>
                 </div>
-                <<img src="https://placekitten.com/287/180" class="card-img-top" alt="Produkt"/>
+                <img src="https://placekitten.com/287/180" class="card-img-top" alt="Produkt"/>
                 <div class="card-body">
-                    test Produkt - Beschreibung kommt später
+                    <?= $row['description']?>
+                    <hr>
+                    <?= $row['price'] ?>
                 </div>
+
                 <div class="card-footer">
                     <a href="" class="btn btn-primary">Details</a>
                     <a href="" class="btn btn-success">In den Warenkorb</a>

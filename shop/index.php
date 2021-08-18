@@ -8,10 +8,50 @@ define ("CUSTOM_STYLESHEETS", "assets/css/");
 
 /**Templates**/
 define ("TEMPLATE_DIR", "templates/default/");
-define ("PAGE_TITLE","Smiley´s Dönerbox")
+define ("CLASS_JUMBOTRON", 'p-4 shadow-4 rounded-3" '
+        . '                 style="background-color: hsl(0, 0%, 94%); '
+        . '                        font-size: 320%; '
+        . '                        margin: 2px; '
+        . '                        margin-bottom: 25px;');
+
+/**Server Vars**/
+define ("PAGE_TITLE","Smiley´s Dönerbox");
+
+
+
+
+/** DB-Configuration **/
+$dbType="mysql";
+$dbHost="mariadb";
+$dbName="shop";
+$dbCharset="utf8";
+        
+$dbUsername="shop";
+$dbPassword="shop";
+
+
+
+/** PDO (Datenbankzugriff) als Instanz anlegen**/
+$dsn="".$dbType.":host=".$dbHost.";dbname=".$dbName.";charset=".$dbCharset."";
+$db = new PDO($dsn,$dbUsername,$dbPassword);
+
+/** SQL Abfrage festlegen**/
+$sql="SELECT id, title, description, price "
+   . "FROM products";
+
+
+/** Abfrage durchführen **/
+$result = $db->query($sql);
+
+
+
+
+
 
 ?>
 
+
+<!Doctype <!doctype html>
 <html>
     <head>
         <title>
@@ -22,7 +62,7 @@ define ("PAGE_TITLE","Smiley´s Dönerbox")
         <link rel="stylesheet" href="<?=CUSTOM_STYLESHEETS?>styles.css">
     </head>
     <body>
-        <header class="p-4 shadow-4 rounded-3" style="background-color: hsl(0, 0%, 94%); font-size: 320%;">
+        <header class="<?=CLASS_JUMBOTRON?>">
             <div class="container">
                 <?=PAGE_TITLE?>   
             </div>
@@ -30,19 +70,11 @@ define ("PAGE_TITLE","Smiley´s Dönerbox")
         
         <section class="container" id="products">
             <div class="row">
-                <div class="col">
-                    <?php include TEMPLATE_DIR."card.php"?>
-                </div>
-                <div class="col">
-                    <?php include TEMPLATE_DIR."card.php"?>               
-                </div>
-                <div class="col">
-                    <?php include TEMPLATE_DIR."card.php"?>   
-                </div>
-                <div class="col">
-                    <?php include TEMPLATE_DIR."card.php"?>  
-                </div>
-            </div>
+                <?php while ($row = $result->fetch()):?>
+                    <div class="col">
+                        <?php include TEMPLATE_DIR."card.php"?>  
+                    </div>
+                <?php endwhile; ?>            </div>
         </section>
     
         <script src="<?=BOOTSTRAP_DIR?>/js/bootstrap.bundle.js"    
