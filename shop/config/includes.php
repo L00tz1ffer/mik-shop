@@ -20,5 +20,3 @@ require_once BASEURL.'/function/database.php';
 define ("BOOTSTRAP_DIR", "../bootstrap/");
 define ("CUSTOM_STYLESHEETS", "assets/css/");
 
-/**Templates**/
-define ("TEMPLATE_DIR", BASEURL."/templates/default/");

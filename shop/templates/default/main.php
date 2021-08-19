@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="<?=CUSTOM_STYLESHEETS?>styles.css">
     </head>
     <body>
+        <?php include TEMPLATE_DIR.'/navbar.php'; ?>
         <header class="<?=CLASS_JUMBOTRON?>">
             <div class="container">
                 <?=PAGE_TITLE?>   
