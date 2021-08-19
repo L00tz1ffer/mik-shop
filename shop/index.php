@@ -16,15 +16,9 @@ require_once CONFIG_DIR.'/includes.php';
 
 /** PDO (Datenbankzugriff) als Instanz anlegen**/
 
-/** SQL Abfrage festlegen**/
-$sql="SELECT id, title, description, price "
-   . "FROM products";
-
-
-/** Abfrage durchführen **/
-$result = getDB()->query($sql);
 
 $userID = getCurrentUserID();
+$products = getAllProduts();
 setcookie('userID',$userID, strtotime('+30 days'),'/');
 
 $url = $_SERVER['REQUEST_URI'];

@@ -9,17 +9,17 @@
 
             <div class="card">
                 <div class="card-title">
-                    <?= $row['title']?>
+                    <?= $product['title']?>
                 </div>
                 <img src="https://placekitten.com/287/180" class="card-img-top" alt="Produkt"/>
                 <div class="card-body">
-                    <?= $row['description']?>
+                    <?= $product['description']?>
                     <hr>
-                    <?= $row['price'] ?>
+                    <?= $product['price'] ?>
                 </div>
 
                 <div class="card-footer">
                     <a href="" class="btn btn-primary">Details</a>
-                    <a href="index.php/cart/add/<?= $row['id'] ?>" class="btn btn-success">In den Warenkorb</a>
+                    <a href="index.php/cart/add/<?= $product['id'] ?>" class="btn btn-success">In den Warenkorb</a>
                 </div>
             </div>
