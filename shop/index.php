@@ -24,18 +24,7 @@ $sql="SELECT id, title, description, price "
 /** Abfrage durchführen **/
 $result = getDB()->query($sql);
 
-/** Definiere Benutzerkennung und Warenkorb Counter **/
-$userID = random_int(0, time());
-$cartitems = 0;
-
-/** Prüfung ob userID im Cookie vorliegt **/
-if (isset($_COOKIE['userID'])){
-    $userID = (int) $_COOKIE['userID'];
-}
-/** Prüfung ob userID als Sessionvariable vorliegt **/
-if (isset($_SESSION['userID'])){
-    $userID = (int) $_SESSION['userID'];
-}
+$userID = getCurrentUserID();
 setcookie('userID',$userID, strtotime('+30 days'),'/');
 
 $url = $_SERVER['REQUEST_URI'];

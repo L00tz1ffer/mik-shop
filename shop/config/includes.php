@@ -19,8 +19,12 @@ require_once CONFIG_DIR.'/env_vars.php';
 /** Datenbank einbinden **/
 require_once BASEURI.'/function/database.php';
 
+
+/** Einkaufswagen **/
 require_once BASEURI.'/function/cart.php';
 
+/** UserFunktionen**/
+require_once BASEURI.'/function/user.php';
 
 
 
