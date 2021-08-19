@@ -13,6 +13,7 @@ require_once CONFIG_DIR.'/includes.php';
 
 
 
+
 /** PDO (Datenbankzugriff) als Instanz anlegen**/
 
 /** SQL Abfrage festlegen**/
@@ -40,26 +41,17 @@ setcookie('userID',$userID, strtotime('+30 days'),'/');
 $url = $_SERVER['REQUEST_URI'];
 $indexPHPPosition = strpos($url,"index.php");
 $route = substr($url, $indexPHPPosition);
-$route = str_replace('index.php', '', $route);
+$route = str_replace('index.php', '', $route);  
 
 if (strpos($route,'/cart/add') !== false){
     $routeParts = explode('/', $route);
     $productID = (int) $routeParts[3];
+
+    addProductToCart($userID, $productID);
     
-    $sql= "INSERT INTO cart "
-        . "SET user_id = :userID, "
-        . "product_id = :productID";
-    $statement = getDB()->prepare($sql);
-    $statement->execute([
-        ':userID' => $userID,
-        ':productID' => $productID
-    ]);
     header("Location: ".BASEURL."/index.php");
     exit();
 }
-
-
-
 
 
 $sql="SELECT COUNT(id) "
@@ -70,5 +62,5 @@ $cartResults = getDB()->query($sql);
 
 $cartitems = $cartResults->fetchColumn();
 
-
+var_dump($userID);
 require TEMPLATE_DIR."main.php"; 

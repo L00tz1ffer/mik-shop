@@ -20,7 +20,7 @@
         <?php include TEMPLATE_DIR.'/navbar.php'; ?>
         <header class="<?=CLASS_JUMBOTRON?>">
             <div class="container">
-                <?=PAGE_TITLE?>   
+                Wilkommen in unserem Online Bestellservice  
             </div>
         </header>
         
