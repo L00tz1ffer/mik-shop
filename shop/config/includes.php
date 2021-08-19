@@ -18,5 +18,5 @@ require_once BASEURL.'/function/database.php';
 
 /** Style Elements **/
 define ("BOOTSTRAP_DIR", "../bootstrap/");
-define ("CUSTOM_STYLESHEETS", "assets/css/");
+define ("CUSTOM_STYLESHEETS", BASEURL."/assets/css/");
 
