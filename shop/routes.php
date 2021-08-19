@@ -21,3 +21,6 @@ if (strpos($route,'/cart/add') !== false){
     header("Location: ".BASEURL."/index.php");
     exit();
 }
+if (strpos($route,'/cart') !== false){
+    
+}

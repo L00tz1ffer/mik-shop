@@ -13,7 +13,8 @@
         <a class="navbar-brand" href="#"><?=PAGE_TITLE?></a>
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                Warenkorb (<?= $cartitems?>)
+                <a href="index.php/cart">Warenkorb (<?= $cartitems?>)</a>
+
             </li>
         </ul>
     </div>
