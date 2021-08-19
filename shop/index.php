@@ -53,14 +53,7 @@ if (strpos($route,'/cart/add') !== false){
     exit();
 }
 
-
-$sql="SELECT COUNT(id) "
-   . "FROM cart "
-   . "WHERE user_id = ".$userID;
-
-$cartResults = getDB()->query($sql);
-
-$cartitems = $cartResults->fetchColumn();
+$cartitems = countProductsInCart($userID);
 
 var_dump($userID);
 require TEMPLATE_DIR."main.php"; 

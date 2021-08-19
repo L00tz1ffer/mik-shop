@@ -16,3 +16,18 @@ function addProductToCart(int $userID, int $productID){
         ':productID' => $productID
     ]);
 }
+
+function countProductsInCart(int $userID){
+    $sql="SELECT COUNT(id) "
+       . "FROM cart "
+       . "WHERE user_id = ".$userID;
+
+    $cartResults = getDB()->query($sql);
+    if ($cartResults === false){
+        var_dump(printDBErrorMessage());
+        return 0;
+    }
+    $cartitems = $cartResults->fetchColumn();
+    
+    return $cartitems;
+}
