@@ -6,6 +6,10 @@
  * and open the template in the editor.
  */
 
+/** Style Elements **/
+define ("BOOTSTRAP_DIR", "../bootstrap/");
+define ("CUSTOM_STYLESHEETS","/shop/assets/css/");
+
 /** Jumbotron Ersatz **/
 require_once CONFIG_DIR.'/styles.php';
 
@@ -15,8 +19,8 @@ require_once CONFIG_DIR.'/env_vars.php';
 /** Datenbank einbinden **/
 require_once BASEURI.'/function/database.php';
 
+require_once BASEURI.'/function/cart.php';
 
-/** Style Elements **/
-define ("BOOTSTRAP_DIR", "../bootstrap/");
-define ("CUSTOM_STYLESHEETS","/shop/assets/css/");
+
+
 

@@ -6,3 +6,13 @@
  * and open the template in the editor.
  */
 
+function addProductToCart(int $userID, int $productID){
+    $sqL = "INSERT INTO cart "
+         . "SET user_id = :userID, "
+             . "product_id = :productID";
+    $statement = getDB()->prepare($sqL);
+    $statement->execute([
+        ':userID' => $userID,
+        ':productID' => $productID
+    ]);
+}
