@@ -20,7 +20,6 @@
 
                 <div class="card-footer">
                     <a href="" class="btn btn-primary">Details</a>
-                    <a href="" class="btn btn-success">In den Warenkorb</a>
-
+                    <a href="index.php/cart/add/<?= $row['id'] ?>" class="btn btn-success">In den Warenkorb</a>
                 </div>
             </div>

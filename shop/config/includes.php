@@ -13,10 +13,10 @@ require_once CONFIG_DIR.'/styles.php';
 require_once CONFIG_DIR.'/env_vars.php';
 
 /** Datenbank einbinden **/
-require_once BASEURL.'/function/database.php';
+require_once BASEURI.'/function/database.php';
 
 
 /** Style Elements **/
 define ("BOOTSTRAP_DIR", "../bootstrap/");
-define ("CUSTOM_STYLESHEETS", BASEURL."/assets/css/");
+define ("CUSTOM_STYLESHEETS","/shop/assets/css/");
 

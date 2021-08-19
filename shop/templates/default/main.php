@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 ?>
-<!Doctype <!doctype html>
+<!Doctype <!doctgeype html>
 <html>
     <head>
         <title>

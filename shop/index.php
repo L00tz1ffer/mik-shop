@@ -3,8 +3,12 @@ error_reporting(-1);
 ini_set('display_errors','On');
 session_start();
 
-define ("BASEURL", __DIR__);
-define ("CONFIG_DIR",BASEURL."/config");
+/** FOR SERVER **/
+define ("BASEURI", __DIR__);
+
+/** FOR CLIENT **/
+define ("BASEURL", "/shop");
+define ("CONFIG_DIR",BASEURI."/config");
 require_once CONFIG_DIR.'/includes.php';
 
 
@@ -20,7 +24,7 @@ $sql="SELECT id, title, description, price "
 $result = getDB()->query($sql);
 
 /** Definiere Benutzerkennung und Warenkorb Counter **/
-$userID = 1337;
+$userID = random_int(0, time());
 $cartitems = 0;
 
 /** Prüfung ob userID im Cookie vorliegt **/
@@ -31,10 +35,37 @@ if (isset($_COOKIE['userID'])){
 if (isset($_SESSION['userID'])){
     $userID = (int) $_SESSION['userID'];
 }
+setcookie('userID',$userID, strtotime('+30 days'),'/');
+
+$url = $_SERVER['REQUEST_URI'];
+$indexPHPPosition = strpos($url,"index.php");
+$route = substr($url, $indexPHPPosition);
+$route = str_replace('index.php', '', $route);
+
+if (strpos($route,'/cart/add') !== false){
+    $routeParts = explode('/', $route);
+    $productID = (int) $routeParts[3];
+    
+    $sql= "INSERT INTO cart "
+        . "SET user_id = :userID, "
+        . "product_id = :productID";
+    $statement = getDB()->prepare($sql);
+    $statement->execute([
+        ':userID' => $userID,
+        ':productID' => $productID
+    ]);
+    header("Location: ".BASEURL."/index.php");
+    exit();
+}
+
+
+
+
 
 $sql="SELECT COUNT(id) "
    . "FROM cart "
    . "WHERE user_id = ".$userID;
+
 $cartResults = getDB()->query($sql);
 
 $cartitems = $cartResults->fetchColumn();

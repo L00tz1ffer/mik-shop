@@ -13,4 +13,4 @@ define ("PAGE_TITLE","Smiley´s Dönerbox");
 define ("TEMPLATE_IN_USE", "default");
 
 /**Template Pfad**/
-define ("TEMPLATE_DIR", BASEURL."/templates/".TEMPLATE_IN_USE."/");
+define ("TEMPLATE_DIR", BASEURI."/templates/".TEMPLATE_IN_USE."/");
