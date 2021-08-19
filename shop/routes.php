@@ -12,6 +12,15 @@ $indexPHPPosition = strpos($url,"index.php");
 $route = substr($url, $indexPHPPosition);
 $route = str_replace('index.php', '', $route);  
 
+if (!$route){
+    $products = getAllProduts();
+
+    $cartitems = countProductsInCart($userID);
+
+    var_dump($userID);
+    require TEMPLATE_DIR."main.php"; 
+}
+
 if (strpos($route,'/cart/add') !== false){
     $routeParts = explode('/', $route);
     $productID = (int) $routeParts[3];
