@@ -29,5 +29,8 @@ require_once BASEURI.'/function/user.php';
 /** Produktbezogene Funktionen **/
 require_once BASEURI.'/function/product.php';
 
+/** Produktbezogene Funktionen **/
+require_once BASEURI.'/routes.php';
+
 
 
