@@ -31,7 +31,6 @@ $products = getAllProduts();
 
 if(!$route){
     $products = getAllProduts();
-    $cartItems = countProductsInCart($userID);
 
  
     require TEMPLATE_DIR."main.php";    
@@ -59,7 +58,6 @@ if (strpos($route,'/cart/add') !== false){
 
 
 if (strpos($route,'/cart') !== false){
-    $cartItems = getCartItemsForUserID();
     require TEMPLATE_DIR."cartPage.php"; 
     exit();
 }
