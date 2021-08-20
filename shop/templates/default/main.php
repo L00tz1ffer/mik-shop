@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="<?=CUSTOM_STYLESHEETS?>styles.css">
     </head>
     <body>
-        <?php include TEMPLATE_DIR.'/navbar.php'; ?>
+        <?php include TEMPLATE_DIR.'/modules/generic/navbar.php'; ?>
         <header class="<?=CLASS_JUMBOTRON?>">
             <div class="container">
                 Wilkommen in unserem Online Bestellservice  
@@ -29,14 +29,14 @@
             <div class="row">
                 <?php foreach ($products as $product):?>
                     <div class="col">
-                        <?php include TEMPLATE_DIR."card.php"?>  
+                        <?php include TEMPLATE_DIR."/modules/shopping/card.php"?>  
                     </div>
                 <?php endforeach; ?>            
             </div>
         </section>
         
         <div>
-            <?php include TEMPLATE_DIR.'/debugging.php'; ?>
+            <?php include TEMPLATE_DIR.'/modules/generic/debugging.php'; ?>
         </div>
     
         <script src="<?=BOOTSTRAP_DIR?>/js/bootstrap.bundle.js"    

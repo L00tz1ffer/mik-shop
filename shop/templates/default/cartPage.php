@@ -18,22 +18,26 @@
         <link rel="stylesheet" href="<?=CUSTOM_STYLESHEETS?>styles.css">
     </head>
     <body>
-        <?php include TEMPLATE_DIR.'/navbar.php'; ?>
+        <?php include TEMPLATE_DIR.'/modules/generic/navbar.php'; ?>
         <header class="<?=CLASS_JUMBOTRON?>">
             <div class="container">
                 Wilkommen in unserem Online Bestellservice  
             </div>
         </header>
         
-        <section class="container" id="products">
+        <section class="container" id="CartItems">
             
-            
+            <?php foreach($cartItemListed as $cartItem):?>
+                <div class="row">
+                    
+                        <?php include TEMPLATE_DIR."/modules/cart/cartItemLister.php"?> 
 
-            
-            
+                </div>   
+            <?php endforeach; ?>
+        
         </section>
         <div>
-            <?php include TEMPLATE_DIR.'/debugging.php'; ?>
+            <?php include TEMPLATE_DIR.'/modules/generic/debugging.php'; ?>
         </div>
     
         <script src="<?=BOOTSTRAP_DIR?>/js/bootstrap.bundle.js"    

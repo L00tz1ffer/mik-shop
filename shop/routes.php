@@ -10,21 +10,18 @@
 $url = $_SERVER['REQUEST_URI'];
 $indexPHPPosition = strpos($url,"index.php");
 
-
 $route = null;
 if (false !== $indexPHPPosition){
     $route = substr($url, $indexPHPPosition);
     $route = str_replace('index.php', '', $route);   
 }
 
-
 /** userID Management **/
 $userID = getCurrentUserID();
 setcookie('userID',$userID, strtotime('+30 days'),BASEURL);
 
-
 /** Warenkorb Counter **/
-$cartItems = countProductsInCart($userID);
+$cartItemsQuantity = countProductsInCart($userID);
 
 /** Produkt Management **/
 $products = getAllProduts();
@@ -58,6 +55,7 @@ if (strpos($route,'/cart/add') !== false){
 
 
 if (strpos($route,'/cart') !== false){
+    $cartItemListed = getCartItemsForUSerID($userID);
     require TEMPLATE_DIR."cartPage.php"; 
     exit();
 }
