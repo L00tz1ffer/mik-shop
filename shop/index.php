@@ -11,7 +11,4 @@ define ("BASEURL", "/shop");
 define ("CONFIG_DIR",BASEURI."/config");
 require_once CONFIG_DIR.'/includes.php';
 
-$userID = getCurrentUserID();
-setcookie('userID',$userID, strtotime('+30 days'),'/');
-
 

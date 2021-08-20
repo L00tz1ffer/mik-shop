@@ -10,7 +10,19 @@ $products = getAllProduts();
 $url = $_SERVER['REQUEST_URI'];
 $indexPHPPosition = strpos($url,"index.php");
 $route = substr($url, $indexPHPPosition);
-$route = str_replace('index.php', '', $route);  
+$route = str_replace('index.php', '', $route); 
+
+$userID = getCurrentUserID();
+setcookie('userID',$userID, strtotime('+30 days'),'/');
+
+
+if(!$route){
+    $products = getAllProduts();
+    $cartitems = countProductsInCart($userID);
+
+
+    require TEMPLATE_DIR."main.php";    
+}
 
 if (!$route){
     $products = getAllProduts();
