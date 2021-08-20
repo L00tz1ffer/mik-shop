@@ -18,4 +18,11 @@ and open the template in the editor.
 
 #cartItems .cartItem{
     border-bottom: 1px solid #DDD;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#cartItems .productPicture {
+    width: 100%;
+    height: auto;
 }

@@ -7,10 +7,10 @@
  */
 ?>
 
-<div class="col-4">
-    <<img src="http://placekitten.com/286/180" alt="Produktbild"/>
+<div class="col-3">
+    <<img class="productPicture" src="http://placekitten.com/286/180" alt="Produktbild"/>
 </div>
-<div class="col-8">
+<div class="col-9">
     <div><?= $cartItem['title']?> </div>
     <div><?= $cartItem['description']?> </div>
     <div><?= $cartItem['price']?> </div>

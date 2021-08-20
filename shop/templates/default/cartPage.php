@@ -25,8 +25,7 @@
             </div>
         </header>
         
-        <section class="container" id="CartItems">
-            
+        <section class="container" id="cartItems">
             <?php foreach($cartItemListed as $cartItem):?>
                 <div class="row cartItem">
                     
