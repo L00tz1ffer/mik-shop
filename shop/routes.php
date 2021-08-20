@@ -5,33 +5,46 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$userID = getCurrentUserID();
-$products = getAllProduts();
+
+/** Routenplaner **/
 $url = $_SERVER['REQUEST_URI'];
 $indexPHPPosition = strpos($url,"index.php");
-$route = substr($url, $indexPHPPosition);
-$route = str_replace('index.php', '', $route); 
 
+
+$route = null;
+if (false !== $indexPHPPosition){
+    $route = substr($url, $indexPHPPosition);
+    $route = str_replace('index.php', '', $route);   
+}
+
+
+/** userID Management **/
 $userID = getCurrentUserID();
-setcookie('userID',$userID, strtotime('+30 days'),'/');
+setcookie('userID',$userID, strtotime('+30 days'),BASEURL);
 
+
+/** Warenkorb Counter **/
+$cartItems = countProductsInCart($userID);
+
+/** Produkt Management **/
+$products = getAllProduts();
 
 if(!$route){
     $products = getAllProduts();
-    $cartitems = countProductsInCart($userID);
+    $cartItems = countProductsInCart($userID);
 
-
+ 
     require TEMPLATE_DIR."main.php";    
 }
 
 if (!$route){
     $products = getAllProduts();
 
-    $cartitems = countProductsInCart($userID);
-
     var_dump($userID);
     require TEMPLATE_DIR."main.php"; 
 }
+
+
 
 if (strpos($route,'/cart/add') !== false){
     $routeParts = explode('/', $route);
@@ -39,9 +52,16 @@ if (strpos($route,'/cart/add') !== false){
 
     addProductToCart($userID, $productID);
     
-    header("Location: ".BASEURL."/index.php");
+    header("Location: ".BASEURL."index.php");
     exit();
 }
+
+
+
 if (strpos($route,'/cart') !== false){
-    
+    $cartItems = getCartItemsForUserID();
+    require TEMPLATE_DIR."cartPage.php"; 
+    exit();
 }
+
+

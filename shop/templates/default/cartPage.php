@@ -26,15 +26,12 @@
         </header>
         
         <section class="container" id="products">
-            <div class="row">
-                <?php foreach ($products as $product):?>
-                    <div class="col">
-                        <?php include TEMPLATE_DIR."card.php"?>  
-                    </div>
-                <?php endforeach; ?>            
-            </div>
+            
+            
+
+            
+            
         </section>
-        
         <div>
             <?php include TEMPLATE_DIR.'/debugging.php'; ?>
         </div>

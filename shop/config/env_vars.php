@@ -14,3 +14,6 @@ define ("TEMPLATE_IN_USE", "default");
 
 /**Template Pfad**/
 define ("TEMPLATE_DIR", BASEURI."/templates/".TEMPLATE_IN_USE."/");
+
+/** ENABLE DEBUGGING **/
+define ("DEBUGGING", "1");

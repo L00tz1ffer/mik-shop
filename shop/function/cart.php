@@ -31,3 +31,19 @@ function countProductsInCart(int $userID){
     
     return $cartitems;
 }
+function getCartItemsForUSerID(int $userID):array{
+    $sql = "SELECT product_id, title, description, price "
+         . "FROM cart "
+         . "JOIN products ON (cart.product_id = products.id) "
+         . "WHERE user_id = ".$userID;
+    $results = getDB()->query($sql);
+    
+    if($results === false){
+        return [];
+    }
+    $found = [];
+    while($row = $results->fetch()){
+        $found[] = $row;
+    }
+    return $found;
+}

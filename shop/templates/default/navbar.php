@@ -12,11 +12,13 @@
     <div class="container">
         <a class="navbar-brand" href="#"><?=PAGE_TITLE?></a>
         <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a href="index.php/cart">Warenkorb (<?= $cartitems?>)</a>
 
+            <li class="nav-item">
+                <a href="index.php/cart">Warenkorb (<?= $cartItems?>)</a>
             </li>
+            
         </ul>
+        
     </div>
 
 </nav>

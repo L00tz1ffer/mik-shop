@@ -7,7 +7,7 @@ session_start();
 define ("BASEURI", __DIR__);
 
 /** FOR CLIENT **/
-define ("BASEURL", "/shop");
+define ("BASEURL", "/shop/");
 define ("CONFIG_DIR",BASEURI."/config");
 require_once CONFIG_DIR.'/includes.php';
 
