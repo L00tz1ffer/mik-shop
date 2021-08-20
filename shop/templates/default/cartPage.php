@@ -28,7 +28,7 @@
         <section class="container" id="CartItems">
             
             <?php foreach($cartItemListed as $cartItem):?>
-                <div class="row">
+                <div class="row cartItem">
                     
                         <?php include TEMPLATE_DIR."/modules/cart/cartItemLister.php"?> 
 
