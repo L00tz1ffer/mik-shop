@@ -51,7 +51,7 @@
                     </div>
                 </div>    
                 <div class="col-2 paymentContainer text-xxl-end">
-                    <a href="#" class="btn btn-success col-12">Zur Kasse gehen</a>
+                    <a href="index.php/checkout" class="btn btn-success col-12">Zur Kasse gehen</a>
                 </div>
             </div>
         </section>

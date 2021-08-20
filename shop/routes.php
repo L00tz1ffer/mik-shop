@@ -61,4 +61,23 @@ if (strpos($route,'/cart') !== false){
     exit();
 }
 
+if(strpos($route,'/login') !== false){
+    $isPost = strtoupper($_SERVER['REQUEST_METHOD']) === 'POST';
+    $username = "";
+    $password = "";
+    require TEMPLATE_DIR."login.php"; 
+    exit();
+}
+
+if(strpos($route,'/checkout') !== false){
+    
+    if(!isLoggedIn()){
+            header("Location: ".BASEURL."index.php/login");
+            exit();
+    }
+    
+    exit();
+}
+
+
 

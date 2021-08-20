@@ -21,3 +21,7 @@ function  getCurrentUserID(){
     }
     return $userID;
 }
+
+function isLoggedIn():bool{
+    return isset($_SESSION['userID']);
+}
