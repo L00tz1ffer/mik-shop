@@ -21,7 +21,7 @@ $userID = getCurrentUserID();
 setcookie('userID',$userID, strtotime('+30 days'),BASEURL);
 
 /** Warenkorb Counter **/
-$cartItemsQuantity = countProductsInCart($userID);
+$cartItemQuantity = countProductsInCart($userID);
 
 /** Produkt Management **/
 $products = getAllProduts();
@@ -56,6 +56,7 @@ if (strpos($route,'/cart/add') !== false){
 
 if (strpos($route,'/cart') !== false){
     $cartItemListed = getCartItemsForUSerID($userID);
+    $cartSum = getCartSumForUserID($userID);
     require TEMPLATE_DIR."cartPage.php"; 
     exit();
 }

@@ -16,13 +16,24 @@ and open the template in the editor.
     margin-bottom: 25px;
 }
 
+#cartItems .cartItemHeader{
+    border-bottom: 1px solid #DDD;   
+}
+
 #cartItems .cartItem{
     border-bottom: 1px solid #DDD;
     padding-top: 15px;
     padding-bottom: 15px;
+    
 }
 
-#cartItems .productPicture {
+#cartItems .productPicture{
     width: 100%;
     height: auto;
 }
+
+.price{
+    color: RED;
+    font-weight: bold;
+}
+

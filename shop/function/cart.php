@@ -8,8 +8,10 @@
 
 function addProductToCart(int $userID, int $productID){
     $sqL = "INSERT INTO cart "
-         . "SET user_id = :userID, "
-             . "product_id = :productID";
+         . "SET quantity = 1, "
+             . "user_id = :userID, "
+             . "product_id = :productID "
+             . "ON DUPLICATE KEY UPDATE quantity = quantity + 1";
     $statement = getDB()->prepare($sqL);
     $statement->execute([
         ':userID' => $userID,
@@ -47,4 +49,18 @@ function getCartItemsForUSerID(int $userID):array{
         $found[] = $row;
     }
     return $found;
+}
+
+function getCartSumForUserID(int $userID):int{
+    $sql = "SELECT SUM(price * quantity) "
+         . "FROM cart "
+         . "JOIN products "
+         . "ON (cart.product_id = products.id) "
+         . "WHERE user_id = ".$userID;
+    $result = getDB()->query($sql);
+    if ($result === false){
+        return 0;
+    }
+    return (int)$result->fetchColumn();
+        
 }

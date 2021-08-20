@@ -26,14 +26,34 @@
         </header>
         
         <section class="container" id="cartItems">
-            <?php foreach($cartItemListed as $cartItem):?>
-                <div class="row cartItem">
-                    
-                        <?php include TEMPLATE_DIR."/modules/cart/cartItemLister.php"?> 
+            <div>
+                <h2>Warenkorb</h2>
+            </div>
+            <div class="row cartContainer">
+                <div class="col-10">
+                    <div class="row cartItemHeader">
+                        <div class="col-12 text-xxl-end">
+                            Preis
+                        </div>                
+                    </div>
 
-                </div>   
-            <?php endforeach; ?>
-        
+                    <?php foreach($cartItemListed as $cartItem):?>
+                        <div class="row cartItem">
+
+                                <?php include TEMPLATE_DIR."/modules/cart/cartItemListElement.php"?> 
+
+                        </div>   
+                    <?php endforeach; ?>
+                    <div class="row">
+                        <div class="col-12 text-xxl-end">
+                            Summe ( <?= $cartItemQuantity ?> Artikel): <span class="price"><?= number_format($cartSum/100,2,","," ") ?> €</span> 
+                        </div>   
+                    </div>
+                </div>    
+                <div class="col-2 paymentContainer text-xxl-end">
+                    <a href="#" class="btn btn-success col-12">Zur Kasse gehen</a>
+                </div>
+            </div>
         </section>
         <div>
             <?php include TEMPLATE_DIR.'/modules/generic/debugging.php'; ?>

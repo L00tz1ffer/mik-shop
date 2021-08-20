@@ -15,7 +15,8 @@
                 <div class="card-body">
                     <?= $product['description']?>
                     <hr>
-                    <?= $product['price'] ?>
+                    <?= number_format($product['price']/100,2,","," ") ?> €
+                    
                 </div>
 
                 <div class="card-footer">

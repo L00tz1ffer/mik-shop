@@ -14,7 +14,7 @@
         <ul class="navbar-nav ms-auto">
 
             <li class="nav-item">
-                <a href="index.php/cart">Warenkorb (<?= $cartItemsQuantity ?>)</a>
+                <a href="index.php/cart">Warenkorb (<?= $cartItemQuantity ?>)</a>
             </li>
             
         </ul>
