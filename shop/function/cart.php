@@ -62,5 +62,25 @@ function getCartSumForUserID(int $userID):int{
         return 0;
     }
     return (int)$result->fetchColumn();
+            
+}
+
+function moveCartProductsToAnotherUser(int $sourceUserID, int $targetUserID):int{
+    $sql = "UPDATE cart "
+         . "SET user_id = :targetUserID "
+         . "WHERE user_id = :sourceUserID";
+    
         
+    $statement = getDB()->prepare($sql);
+    if (false === $statement){
+        printDBErrorMessage();
+
+        return 0;
+    }
+    return $statement->execute([
+        ':targetUserID' => $targetUserID,
+        ':sourceUserID' => $sourceUserID
+    ]);
+   
+    
 }

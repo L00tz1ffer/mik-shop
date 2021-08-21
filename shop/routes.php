@@ -88,6 +88,11 @@ if(strpos($route,'/login') !== false){
             
         if(0 === count($errors)){
             $_SESSION['userID'] = (int) $userData['id'];
+            
+            moveCartProductsToAnotherUser($_COOKIE['userID'], (int) $userData['id']);
+            
+            setcookie('userID', (int)$userData['id']);
+            
             $redirectTarget = BASEURL.'index.php';
             if (isset($_SESSION['redirectTarget'])){
                 $redirectTarget = $_SESSION['redirectTarget'];
