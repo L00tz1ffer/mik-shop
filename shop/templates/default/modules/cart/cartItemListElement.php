@@ -15,5 +15,5 @@
     <div><?= $cartItem['description']?> </div>
 </div>
 <div class="col-2 text-xxl-end">
-    <span class="price"><?= number_format($cartItem['price']/100,2,","," ")?> €</span> 
+    x * <span class="price"><?= number_format($cartItem['price']/100,2,","," ")?> €</span> 
 </div>
