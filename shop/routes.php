@@ -63,8 +63,43 @@ if (strpos($route,'/cart') !== false){
 
 if(strpos($route,'/login') !== false){
     $isPost = strtoupper($_SERVER['REQUEST_METHOD']) === 'POST';
-    $username = "";
-    $password = "";
+
+    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
+    $password = filter_input(INPUT_POST, 'password');
+    $errors = [];
+    $hasErrors = false;
+    
+    if($isPost){
+        if (false === (bool)$username || "" === $username ){
+            $errors[] = "Benutzername ist leer";
+        }
+        if (false === (bool)$password || "" === $password ){
+            $errors[] = "Passwort ist leer";
+        }
+        
+
+        $userData = getUserDateForUsername($username);
+        if ((bool)$username && 0 === count($userData)){
+            $errors[] = "Eingabe Fehlerhaft";
+        }
+        if ((bool)$password && isset ($userData['password'])&& false === password_verify($password, $userData['password'])){
+            $errors[] = "Eingabe Fehlerhaft";
+        }
+            
+        if(0 === count($errors)){
+            $_SESSION['userID'] = (int) $userData['id'];
+            $redirectTarget = BASEURL.'index.php';
+            if (isset($_SESSION['redirectTarget'])){
+                $redirectTarget = $_SESSION['redirectTarget'];
+            }
+            
+            header("Location: ".$redirectTarget);
+            exit();
+        }
+        
+    }
+    
+    $hasErrors = count($errors) > 0;
     require TEMPLATE_DIR."login.php"; 
     exit();
 }
@@ -72,6 +107,7 @@ if(strpos($route,'/login') !== false){
 if(strpos($route,'/checkout') !== false){
     
     if(!isLoggedIn()){
+            $_SESSION['redirectTarget'] = BASEURL."index.php/checkout";
             header("Location: ".BASEURL."index.php/login");
             exit();
     }

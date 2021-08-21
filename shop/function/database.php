@@ -29,6 +29,7 @@ function getDB(){
 function printDBErrorMessage(){
     $info = getDB()->errorInfo();
     if (isset($info[2])){
+        echo $info[2];
         return $info[2];
     }
     return "";

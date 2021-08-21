@@ -42,6 +42,13 @@
                                     </center>
                                 </div>
                                 <div class="card-body">
+                                    <?php if($hasErrors): ?>
+                                    <div class="alert alert-danger" role"alert">
+                                            <?php foreach ($errors as $errorMessage):?>
+                                                <p><?= $errorMessage ?></p>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    <?php endif; ?>
                                     <div class="form-group">
                                         <label for="username">Username</label>
                                         <input type="text" value="<?=$username?>" name="username" id="username" class="form-control">
