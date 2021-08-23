@@ -10,12 +10,6 @@
 $url = $_SERVER['REQUEST_URI'];
 $indexPHPPosition = strpos($url,"index.php");
 
-$route = null;
-if (false !== $indexPHPPosition){
-    $route = substr($url, $indexPHPPosition);
-    $route = str_replace('index.php', '', $route);   
-}
-
 /** userID Management **/
 $userID = getCurrentUserID();
 setcookie('userID',$userID, strtotime('+30 days'),BASEURL);
@@ -25,6 +19,12 @@ $cartItemQuantity = countProductsInCart($userID);
 
 /** Produkt Management **/
 $products = getAllProduts();
+
+$route = null;
+if (false !== $indexPHPPosition){
+    $route = substr($url, $indexPHPPosition);
+    $route = str_replace('index.php', '', $route);   
+}
 
 if(!$route){
     $products = getAllProduts();
@@ -40,8 +40,6 @@ if (!$route){
     require TEMPLATE_DIR."main.php"; 
 }
 
-
-
 if (strpos($route,'/cart/add') !== false){
     $routeParts = explode('/', $route);
     $productID = (int) $routeParts[3];
@@ -51,8 +49,6 @@ if (strpos($route,'/cart/add') !== false){
     header("Location: ".BASEURL."index.php");
     exit();
 }
-
-
 
 if (strpos($route,'/cart') !== false){
     $cartItemListed = getCartItemsForUSerID($userID);
