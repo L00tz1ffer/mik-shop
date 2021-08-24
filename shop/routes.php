@@ -1,43 +1,34 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /** Routenplaner **/
 $url = $_SERVER['REQUEST_URI'];
 $indexPHPPosition = strpos($url,"index.php");
-
 /** userID Management **/
 $userID = getCurrentUserID();
 setcookie('userID',$userID, strtotime('+30 days'),BASEURL);
-
 /** Warenkorb Counter **/
 $cartItemQuantity = countProductsInCart($userID);
-
 /** Produkt Management **/
 $products = getAllProduts();
-
 $route = null;
+$_SESSION['redirectTarget'] = BASEURL.'index.php';
+
 if (false !== $indexPHPPosition){
     $route = substr($url, $indexPHPPosition);
-    $route = str_replace('index.php', '', $route);   
+    $route = str_replace('index.php', '', $route);
 }
 
 if(!$route){
     $products = getAllProduts();
 
  
-    require TEMPLATE_DIR."main.php";    
+    require TEMPLATE_DIR_INTERNAL."main.php";    
 }
 
 if (!$route){
     $products = getAllProduts();
 
     var_dump($userID);
-    require TEMPLATE_DIR."main.php"; 
+    require TEMPLATE_DIR_INTERNAL."main.php"; 
 }
 
 if (strpos($route,'/cart/add') !== false){
@@ -53,7 +44,7 @@ if (strpos($route,'/cart/add') !== false){
 if (strpos($route,'/cart') !== false){
     $cartItemListed = getCartItemsForUSerID($userID);
     $cartSum = getCartSumForUserID($userID);
-    require TEMPLATE_DIR."cartPage.php"; 
+    require TEMPLATE_DIR_INTERNAL."cartPage.php"; 
     exit();
 }
 
@@ -87,21 +78,23 @@ if(strpos($route,'/login') !== false){
             
             moveCartProductsToAnotherUser($_COOKIE['userID'], (int) $userData['id']);
             
-            setcookie('userID', (int)$userData['id']);
+            setcookie('userID', (int) $userData['id'],strtotime('+30 days'),BASEURL);
             
-            $redirectTarget = BASEURL.'index.php';
-            if (isset($_SESSION['redirectTarget'])){
-                $redirectTarget = $_SESSION['redirectTarget'];
-            }
-            
-            header("Location: ".$redirectTarget);
+            header("Location: ".$_SESSION['redirectTarget']);
             exit();
         }
         
     }
     
     $hasErrors = count($errors) > 0;
-    require TEMPLATE_DIR."login.php"; 
+    require TEMPLATE_DIR_INTERNAL."login.php"; 
+    exit();
+}
+
+if (strpos($route,'/logout') !== false){
+    session_regenerate_id(true);
+    session_destroy();
+    header("Location: ".$_SESSION['redirectTarget']);
     exit();
 }
 
@@ -118,3 +111,4 @@ if(strpos($route,'/checkout') !== false){
 
 
 
+$_SESSION['redirectTarget'] = BASEURL.'index.php'.$route;

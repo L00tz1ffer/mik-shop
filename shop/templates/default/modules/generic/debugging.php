@@ -13,7 +13,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="#">DEBUG ZEILE</a>
-        <ul class="navbar-nav ms-auto">
+        <ul>
 
 
                 <li class="nav-item" style="padding-right: 20px;">
@@ -21,6 +21,9 @@
                 </li>
                 <li class="nav-item" style="padding-right: 20px;">
                     route: <?= var_dump($route) ?>
+                </li>
+                <li class="nav-item" style="padding-right: 20px;">
+                    BASEURL: <?= var_dump(BASEURL) ?>
                 </li>
 
             
