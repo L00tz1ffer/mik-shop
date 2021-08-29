@@ -92,6 +92,7 @@ if(strpos($route,'/login') !== false){
 }
 
 if (strpos($route,'/logout') !== false){
+    setcookie('userID', (int) "null",strtotime('+30 days'),BASEURL);
     session_regenerate_id(true);
     session_destroy();
     header("Location: ".$_SESSION['redirectTarget']);
